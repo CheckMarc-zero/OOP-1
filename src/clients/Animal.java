@@ -3,7 +3,7 @@ package clients;
 import java.time.LocalDate;
 import java.util.Objects;
 
-public class Animal {
+public abstract class Animal {
     protected String name;
     protected float weight;
     protected LocalDate age;
@@ -19,42 +19,12 @@ public class Animal {
     public Animal(){this("Жывотное",300,LocalDate.now(),new Owner());
     }
 
-    public void sleep(){
-        System.out.println(getType()+" sleep");
-    }
-    public void getUp(){
-        System.out.println(getType()+" getUp");
-    }
-    public void eat(){
-        System.out.println(getType()+" eat");
-    }
-    public void play(){
-        System.out.println(getType()+" play");
-    }
-    public void toGo() {
-        if (Objects.equals(getType(), "Fish") ) {
-            System.out.println(getType() + " not go");
-        } else {
-            System.out.println(getType() + " go");
-        }
-    }
-    public void fly(){
-        if (Objects.equals( getType(), "Vorona") || Objects.equals(getType(), "Diatel")) {
-            System.out.println(getType()+" fly");
-        }
-        else {
-            System.out.println(getType()+" not fly");
-        }
 
-    }
-    public void swim() {
-        if (Objects.equals(getType(), "Fish") || Objects.equals(getType(), "Penguin")) {
-            System.out.println(getType() + " swim");
-        } else {
-            System.out.println(getType() + " not swim")
-            ;
-        }
-    }
+    public abstract void eat();
+
+
+
+
     public String getType(){
         return getClass().getSimpleName();
     }
